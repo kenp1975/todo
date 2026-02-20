@@ -1,0 +1,107 @@
+.item {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.15s;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.item:hover {
+  background-color: #fafafa;
+}
+
+.item.completed .text {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  cursor: pointer;
+  min-width: 0;
+}
+
+/* Hide native checkbox */
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Custom checkbox */
+.customCheckbox {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, background-color 0.2s;
+  position: relative;
+}
+
+.checkbox:checked + .customCheckbox {
+  border-color: #5b8dee;
+  background-color: #5b8dee;
+}
+
+.checkbox:checked + .customCheckbox::after {
+  content: '';
+  width: 5px;
+  height: 9px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg) translateY(-1px);
+  display: block;
+}
+
+.checkbox:focus-visible + .customCheckbox {
+  outline: 2px solid #5b8dee;
+  outline-offset: 2px;
+}
+
+.text {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.4;
+  word-break: break-word;
+  transition: color 0.2s;
+}
+
+.deleteButton {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  color: #ccc;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, background-color 0.2s;
+  margin-left: 8px;
+  opacity: 0;
+}
+
+.item:hover .deleteButton {
+  opacity: 1;
+}
+
+.deleteButton:hover {
+  color: #e53e3e;
+  background-color: #fff1f1;
+}

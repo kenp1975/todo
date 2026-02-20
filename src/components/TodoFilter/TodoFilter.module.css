@@ -1,0 +1,87 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-top: 1px solid #e8e8e8;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.count {
+  font-size: 13px;
+  color: #888;
+  min-width: 70px;
+}
+
+.count strong {
+  color: #5b8dee;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.tab {
+  padding: 5px 12px;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.tab:hover {
+  border-color: #ccc;
+  color: #333;
+}
+
+.tab.active {
+  border-color: #5b8dee;
+  color: #5b8dee;
+  font-weight: 600;
+}
+
+.clearButton {
+  font-size: 13px;
+  color: #999;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 6px;
+  transition: color 0.15s, background-color 0.15s;
+  min-width: 70px;
+  text-align: right;
+}
+
+.clearButton:hover:not(:disabled) {
+  color: #e53e3e;
+  background-color: #fff1f1;
+}
+
+.clearButton.hidden {
+  visibility: hidden;
+}
+
+@media (max-width: 480px) {
+  .footer {
+    justify-content: center;
+  }
+
+  .count,
+  .clearButton {
+    width: 100%;
+    text-align: center;
+    min-width: unset;
+  }
+
+  .tabs {
+    order: -1;
+    width: 100%;
+    justify-content: center;
+  }
+}
